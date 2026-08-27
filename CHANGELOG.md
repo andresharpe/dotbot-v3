@@ -5,6 +5,16 @@ All notable changes to dotbot are documented in this file. The format follows [K
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+### Removed
+
+## [4.0.4] - 2026-08-27
+
+### Added
 - **`dotbot doctor` WORKSPACE TRACKING section** reports any tracked `.bot/` tree hidden by an ignore rule, naming the rule responsible (`file:line:pattern`) so the offending entry can be found. Covers `.bot/workspace/tasks`, `.bot/workspace/decisions`, `.bot/content`, `.bot/hooks` and `.bot/settings`. Run from a task worktree it resolves back to the main repository via `git rev-parse --git-common-dir`, so it reports identically from either checkout.
 - **`Start-DotbotRuntimeDetached`** in `Dotbot.Runtime` — brings the per-project runtime up in a process of its own by spawning `dotbot serve` as a child and waiting for `.control/runtime.json`, which `Start-DotbotRuntime` writes only once the listener is accepting. `Start-DotbotRuntime` hosts the listener in-process and records its own `$PID`, so it cannot serve a CLI that exits immediately after spawning a detached runner. The result carries no `listener` handle, so a caller can never tear down a runtime it does not own.
 
